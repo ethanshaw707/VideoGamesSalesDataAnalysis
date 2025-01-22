@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt 
+import numpy as np 
 
 # Load the dataset
 dataset= pd.read_csv('vgsales new.csv')  # Adjust for your file type (e.g., .xlsx for Excel)
@@ -33,3 +34,38 @@ print("Top 10 selling games in North America:")
 print(top_10_games)
 
 print(f"Total Global Sale of the ten selling games is {global_sales:.2f} million")
+
+
+# Code for the Question: How do sales vary by genre in Japan compared to Europe?
+
+# Drop rows with missing values in 'Genre', 'JP_Sales', or 'EU_Sales'
+dataset = dataset.dropna(subset=['Genre', 'JP_Sales', 'EU_Sales'])
+
+# Group by Genre and calculate total sales for Japan and Europe
+sales_by_genre = dataset.groupby('Genre')[['JP_Sales', 'EU_Sales']].sum()
+
+# Sort genres by total sales in Japan for better visualization
+sales_by_genre = sales_by_genre.sort_values('JP_Sales', ascending=False)
+
+# Plot a grouped bar chart to compare sales
+x = np.arange(len(sales_by_genre))  # Label locations
+width = 0.35  # Width of the bars
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Add bars for JP_Sales and EU_Sales
+bar1 = ax.bar(x - width/2, sales_by_genre['JP_Sales'], width, label='Japan (JP Sales)', color='red')
+bar2 = ax.bar(x + width/2, sales_by_genre['EU_Sales'], width, label='Europe (EU Sales)', color='blue')
+
+# Add titles and labels
+ax.set_title('Sales by Genre in Japan vs. Europe', fontsize=16)
+ax.set_xlabel('Genre', fontsize=14)
+ax.set_ylabel('Total Sales (in millions)', fontsize=14)
+ax.set_xticks(x)
+ax.set_xticklabels(sales_by_genre.index, rotation=45)
+ax.legend(fontsize=12)
+ax.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Show the plot
+plt.tight_layout()
+plt.show()
