@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
 # Load the dataset
 dataset= pd.read_csv('vgsales new.csv')  # Adjust for your file type (e.g., .xlsx for Excel)
@@ -16,24 +16,20 @@ print(dataset.info())
 print("\nDescriptive Statistics:")
 print(dataset.describe())
 
-dataset = dataset.dropna(subset=['Year'])
+# Code for the question: What are the ten 10 selling video games in North America and how much those ten games made in total global sales? 
+# This filter the dataset to remove the NA_sales that has 0 or doesn't have a value
+dataset_filter = dataset[dataset['NA_Sales'] > 0]
 
-# Ensure 'Year' is an integer
-dataset['Year'] = dataset['Year'].astype(int)
+#Sorts the dataset from top to bottom
+sorted_dataset = dataset_filter.sort_values(by='NA_Sales', ascending=False)
 
-# Group sales data by year and calculate the total sales for each region
-sales_trends = dataset.groupby('Year')[['NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales', 'Global_Sales']].sum()
+#This sorts for only calling the top ten games in sells in NA
+top_10_games = sorted_dataset[['Name','Platform','NA_Sales', 'Global_Sales']].head(10)
 
-# Create a bar chart
-sales_trends.plot(kind='bar', stacked=True, figsize=(14, 8))
+#This gets the sum of the total global sales of the top ten games
+global_sales = top_10_games['Global_Sales'].sum()
 
-# Add titles and labels
-plt.title('Video Game Sales Trends by Region (Yearly)', fontsize=16)
-plt.xlabel('Year', fontsize=14)
-plt.ylabel('Total Sales (in millions)', fontsize=14)
-plt.legend(title="Region", fontsize=12)
-plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.tight_layout()
+print("Top 10 selling games in North America:")
+print(top_10_games)
 
-# Show the plot
-plt.show()
+print(f"Total Global Sale of the ten selling games is {global_sales:.2f} million")
