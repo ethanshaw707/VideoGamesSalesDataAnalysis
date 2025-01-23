@@ -1,34 +1,38 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+We are trying to learn more tools and abilities in manipulating and organizing data to help analyze data sets. 
 
-{Provide a description of the data set that you are analyzing.  Include the link of where you obtained the data.}
+Link of the dataset:  https://www.kaggle.com/datasets/willianoliveiragibin/video-game-sales-analyze
 
-{Describe your purpose for writing this software to analyze the data.}
+Description of the dataset: It is a video game dataset that has the numbers of sales in different regions of the world and the global sales of video games. 
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the data set, the questions and answers, the code running and a walkthrough of the code.}
+We are writing the code as if we are data analysts for a video game company. We want to show the company the video game trends. How genres of games perform in different regions, and other helpful data for them. 
 
-[Software Demo Video](http://youtube.link.goes.here)
 
 # Data Analysis Results
 
-{List the questions and the answers you found by doing this analysis.}
+What are the top 10 selling games in North America? Example. Top selling game: Wii Sports
+
+How popular is each genre in each region? Example. In North America, shooter games had 852 (million) copies sold
+
+How do sales vary by genre in Japan compared to Europe? Japan dominates in Role-Playing and Fighting games, reflecting its cultural affinity for these genres. Europe excels in Action, Sports, and Shooter games, with significantly higher sales in these categories. 
+
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
-
+- tkinter
+- pandas
+- matplotlib
+- numpy
+- Programming Language: Python Pandas
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+- https://pandas.pydata.org/docs/user_guide/index.html#user-guide 
+- https://pandas.pydata.org/docs/user_guide/10min.html#min
+- https://towardsdatascience.com/getting-started-to-data-analysis-with-python-pandas-with-titanic-dataset-a195ab043c77
 
 # Future Work
-
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+Things to improve-
+- More data included for more accurate analysis. 
+- Predictive model for what potential sales could be in the future
+- Better presentation, with the user able to see all the data together
