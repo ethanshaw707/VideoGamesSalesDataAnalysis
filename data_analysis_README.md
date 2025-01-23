@@ -15,8 +15,7 @@ What are the top 10 selling games in North America? Example. Top selling game: W
 
 How popular is each genre in each region? Example. In North America, shooter games had 852 (million) copies sold
 
-How do sales vary by genre in Japan compared to Europe? Japan dominates in Role-Playing and Fighting games, reflecting its cultural affinity for these genres. Europe excels in Action, Sports, and Shooter games, with significantly higher sales in these categories. 
-
+How do sales vary by genre in Japan compared to Europe? Japan dominates in Role-Playing and Fighting games, reflecting its cultural affinity for these genres. Europe excels in Action, Sports, and Shooter games, with significantly higher sales in these categories. Both regions show balanced sales in Platform, Miscellaneous, and Simulation games.
 
 # Development Environment
 
