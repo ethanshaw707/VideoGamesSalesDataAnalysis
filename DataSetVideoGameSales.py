@@ -49,7 +49,7 @@ sales_by_genre = sales_by_genre.sort_values('JP_Sales', ascending=False)
 
 # Plot a grouped bar chart to compare sales
 x = np.arange(len(sales_by_genre))  # Label locations
-width = 0.35  # Width of the bars
+width = 0.35 # Width of the bars
 
 fig, ax = plt.subplots(figsize=(12, 8))
 
