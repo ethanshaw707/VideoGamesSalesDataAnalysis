@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import numpy as np 
 
+#Joshua Macias
 # Load the dataset
 dataset= pd.read_csv('vgsales new.csv')  # Adjust for your file type (e.g., .xlsx for Excel)
 
