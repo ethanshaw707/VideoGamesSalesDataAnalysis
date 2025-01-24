@@ -5,6 +5,7 @@ import numpy as np
 # Load the dataset
 dataset= pd.read_csv('vgsales new.csv')  # Adjust for your file type (e.g., .xlsx for Excel)
 
+#This filter out the rows that has 0 or is missing the value in the NA Sales 
 dataset_filter = dataset[dataset['NA_Sales'] > 0]
 
 #Sorts the dataset from top to bottom
@@ -34,12 +35,12 @@ plt.figure(figsize=(10, 6))
 plt.barh(y - width / 2, top_10_games['NA_Sales'], height=width, color='blue', label='North America Sales')
 plt.barh(y + width / 2, top_10_games['Global_Sales'], height=width, color='green', alpha=0.7, label='Global Sales')
 
-# Add labels and title
+# Add the labels and title in the graph
 plt.xlabel('Sales (in millions)')
 plt.ylabel('Game Titles')
 plt.title('Top Ten Selling Video Games in North America')
 
-# Add custom y-ticks
+# Add the y-ticks which is the top ten games
 plt.yticks(y, top_10_games['Name'])
 
 # Add legend
